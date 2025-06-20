@@ -1,0 +1,14 @@
+
+
+CREATE COMPUTE MODULE flows_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN 
+		 CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot.JSON.Data.app= 'this is from ace jenkins hello';
+	END;
+END MODULE;
